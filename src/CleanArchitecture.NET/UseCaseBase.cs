@@ -1,6 +1,11 @@
-﻿namespace CleanArchitecture.NET;
+﻿using CleanArchitecture.NET.Interfaces;
 
-public abstract class UseCaseBase<TRequest, TOutput> where TRequest : RequestBase
+namespace CleanArchitecture.NET;
+
+public abstract class UseCaseBase<TRequest, TOutput> : IUseCase<TRequest, TOutput>
+    where TRequest : RequestBase
 {
+    // TODO Logger?
+
     public abstract Task<TOutput> Execute(TRequest request);
 }
