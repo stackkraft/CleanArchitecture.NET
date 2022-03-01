@@ -7,5 +7,5 @@ public abstract class UseCaseBase<TRequest, TOutput> : IUseCase<TRequest, TOutpu
 {
     // TODO Logger?
 
-    public abstract Task<TOutput> Execute(TRequest request);
+    public abstract TOutput Execute(TRequest request);
 }
